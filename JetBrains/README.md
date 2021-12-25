@@ -4,4 +4,4 @@ jetbrains-toolbox-install
 
 Use
 
-    curl -fsSL https://raw.githubusercontent.com/PlagueEvgeny/LinuxApp/master/JetBrains/jetbrains-toolbox.sh
+    curl -fsSL https://raw.githubusercontent.com/PlagueEvgeny/LinuxApp/master/JetBrains/jetbrains-toolbox.sh | bash
