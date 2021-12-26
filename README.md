@@ -41,3 +41,4 @@ Essential tools for software developers and teams
 
 ## Docs
 - [<img src="https://www.google.com/docs/about/favicon.ico" width="16" height="16" /> Google Docs](https://www.google.com/docs) Web docs, I use every day.
+- [<img src="https://static-www.onlyoffice.com/v9.5.0/images/favicons01/favicon_old.ico" width="16" height="16" /> OnlyOffice](https://www.onlyoffice.com/) Offline office
