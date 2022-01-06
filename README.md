@@ -4,7 +4,7 @@ My pack of applications and dotfiles which I use on Linux
 
 Recently I have been using Linux. And now my main system is Linux. Now I want to put together a package of the best applications for work and life on Linux OS 
 
-![](assets/poster.png)
+![](poster.png)
 
 ### Distro now: [<img src="https://linuxmint.com/web/img/favicon.ico" width="16" height="16" /> Linux Mint](https://www.linuxmint.com/)
 
