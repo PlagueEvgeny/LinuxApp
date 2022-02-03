@@ -25,12 +25,8 @@ Recently I have been using Linux. And now my main system is Linux. Now I want to
 
 ## Code editor
 - [<img src="https://code.visualstudio.com/favicon.ico" height="16" /> Visual Studio Code](https://code.visualstudio.com/) - Lightweight Source Code Editor and text as well
-- [<img src="https://www.jetbrains.com/favicon-32x32.png" height="16" /> JetBrains](https://https://www.jetbrains.com) - 
+- [<img src="https://www.jetbrains.com/favicon-32x32.png" height="16" /> JetBrains](https://www.jetbrains.com) - 
 Essential tools for software developers and teams
-
-## Notes
-- [<img src="https://s2.wp.com/wp-content/themes/a8c/simplenote/images/chrome/favicon.ico" width="16" height="16" /> Simplenotes](https://simplenote.com/) - Best that is match with me. It has as simple notes and markdown notes. Client has on all popular OS include mobiles. Also, has synchronization.
-
 
 
 ## Video/Graphics/3D editors
