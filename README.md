@@ -6,12 +6,11 @@ Recently I have been using Linux. And now my main system is Linux. Now I want to
 
 ![](poster.png)
 
-### Distro now: [<img src="https://getfedora.org/static/images/fedora.png" width="16" height="16" /> Fedora](https://getfedora.org/)
+### Distro now: [<img src="https://www.debian.org/Pics/openlogo-50.png" width="16" height="16" /> Debian](https://debian.org/)
 
 
 ## Music
 
-- [<img src="https://www.spotify.com/favicon.ico" height="16" /> Spotify](https://www.spotify.com) - Streaming service for music for all your devices
 - [<img src="https://music.yandex.ru/blocks/common/apple-touch.180x180.png" height="16" /> Yandex.Music](https://www.music.yandex.com) - Streaming service for music for all your devices
 
 
@@ -25,16 +24,13 @@ Recently I have been using Linux. And now my main system is Linux. Now I want to
 
 ## Code editor
 - [<img src="https://code.visualstudio.com/favicon.ico" height="16" /> Visual Studio Code](https://code.visualstudio.com/) - Lightweight Source Code Editor and text as well
-- [<img src="https://www.jetbrains.com/favicon-32x32.png" height="16" /> JetBrains](https://www.jetbrains.com) - 
 Essential tools for software developers and teams
 
 
 ## Video/Graphics/3D editors
 - [<img src="https://krita.org/wp-content/themes/krita-org-theme/images/favicon.ico" height="16" /> Krita](https://krita.org/)  - Krita is a professional free and open source painting program.
 - [<img src="https://media.inkscape.org/static/images/inkscape-logo.png" height="16" /> Inkscape](https://inkscape.org/)  - Free and open-source vector graphics editor
-- [<img src="https://obsproject.com/favicon.ico" height="16" /> Open Broadcaster Software](https://obsproject.com/) - For video recording and live streaming.
 - [<img src="https://www.blender.org/favicon.ico" height="16" /> Blender](https://www.blender.org/) - Fully-featured extensible cross-platform 3D content suite.
 
 ## Docs
 - [<img src="https://www.google.com/docs/about/favicon.ico" width="16" height="16" /> Google Docs](https://www.google.com/docs) Web docs, I use every day.
-- [<img src="https://static-www.onlyoffice.com/v9.5.0/images/favicons01/favicon_old.ico" width="16" height="16" /> OnlyOffice](https://www.onlyoffice.com/) Offline office
