@@ -15,7 +15,7 @@ Recently I have been using Linux. And now my main system is Linux. Now I want to
 
 
 ## Messengers
-- [<img src="https://desktop.telegram.org/img/td_favicon.ico" width="16" height="16" /> Telegram](https://desktop.telegram.org/) [<img src="https://dashboard.snapcraft.io/site_media/appmedia/2018/04/Snapcraft-logo-bird.png" width="16" height="16" />](https://snapcraft.io/telegram-desktop) [<img src="https://github.com/flatpak/flatpak/raw/master/flatpak.png?raw=true" width="16" height="16" />](https://flathub.org/apps/details/org.telegram.desktop) - The messaging app with a focus on speed and security, it’s super fast, simple and free.
+- [<img src="https://desktop.telegram.org/img/td_favicon.ico" width="16" height="16" /> Telegram](https://desktop.telegram.org/) - The messaging app with a focus on speed and security, it’s super fast, simple and free.
 - [<img src="https://discordapp.com/assets/07dca80a102d4149e9736d4b162cff6f.ico" width="16" height="16" /> Discord](https://discordapp.com) - Discord is a free voice and text chat client for gamers and non-gamers alike. You can use it from your browser and it's available on iOS, Android, Windows, Mac, and Linux.
 
 
