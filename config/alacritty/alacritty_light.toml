@@ -1,0 +1,103 @@
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[colors.bright]
+black = "#7F7F8C"
+blue = "#0066CC"
+cyan = "#00A3A3"
+green = "#00A300"
+magenta = "#CC00CC"
+red = "#CC0000"
+white = "#E5E5E5"
+yellow = "#CCCC00"
+
+[colors.cursor]
+cursor = "#000000"
+text = "#FFFFFF"
+
+[colors.dim]
+black = "#B8B8B8"
+blue = "#7AA6DA"
+cyan = "#70C0B1"
+green = "#B9D0A3"
+magenta = "#D7A7D7"
+red = "#E7A7A7"
+white = "#D8D8D8"
+yellow = "#E7D7A7"
+
+[colors.footer_bar]
+background = "#F0F0F0"
+foreground = "#333333"
+
+[colors.normal]
+black = "#333333"
+blue = "#0066CC"
+cyan = "#008787"
+green = "#008700"
+magenta = "#870087"
+red = "#CC0000"
+white = "#E5E5E5"
+yellow = "#CCCC00"
+
+[colors.primary]
+background = "#F8F8F8"
+bright_foreground = "#333333"
+dim_foreground = "#666666"
+foreground = "#333333"
+
+[cursor.style]
+shape = "Underline"
+
+[font]
+size = 15.0
+
+[font.bold]
+family = "Hack"
+style = "Bold"
+
+[font.bold_italic]
+family = "Hack"
+style = "Bold Italic"
+
+[font.italic]
+family = "Hack"
+style = "Italic"
+
+[font.normal]
+family = "Hack"
+style = "Regular"
+
+[[keyboard.bindings]]
+action = "Paste"
+key = "V"
+mods = "Control | Shift"
+
+[[keyboard.bindings]]
+action = "Copy"
+key = "C"
+mods = "Control | Shift"
+
+[[keyboard.bindings]]
+action = "ClearLogNotice"
+key = "L"
+mods = "Control"
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[shell]
+program = "/usr/bin/zsh"
+
+[window]
+opacity = 1
+title = "PlagueAlacritty"
+decorations = "None"
+
+[window.class]
+general = "Alacritty"
+instance = "Alacritty"
+
+[window.padding]
+x = 5
+y = 5
