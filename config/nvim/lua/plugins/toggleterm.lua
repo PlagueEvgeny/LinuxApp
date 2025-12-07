@@ -2,7 +2,6 @@ require("toggleterm").setup{
   size = 20,
   open_mapping = [[<c-\>]],
   direction = 'float',
-  shell = "zsh"
 }
 
 function _G.set_terminal_keymaps()

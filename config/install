@@ -1,0 +1,37 @@
+sudo pacman -S mesa xorg xorg-xinit lxsession 
+sudo pacman -S zathura zathura-djvu zathura-pdf-mupdf 
+sudo pacman -S pulseaudio mpv alsa-plugins ffmpeg pamixer mpd mpc 
+sudo pacman -S zsh feh
+sudo pacman -S rofi rofi-calc rofi-emoji ranger mat2 calcurse tree  
+sudo pacman -S firefox 
+sudo pacman -S bluez-utils bc bluez bluez-deprecated-tools
+sudo pacman -S fastfetch imagemagick
+
+sudo pacman -Sy libayatana-appindicator
+sudo pacman -S flameshot
+sudo pacman -S ttf-dejavu noto-fonts
+sudo pacman -S sxhkd bspwm
+sudo pacman -S ueberzugpp
+sudo pacman -S udisks2
+sudo pacman -S udiskie
+sudo pacman -S obsidian
+sudo pacman -S pyright
+sudo pacman -S nodejs
+sudo pacman -S docker docker-compose
+sudo usermod -aG docker plagueevgeny
+sudo pacman -S lsd bat 
+sudo pacman -S evince xdotool  
+sudo pacman -S brightnessctl redshift 
+sudo pacman -S automake make cmake clang gcc npm
+sudo pacman -S autoconf btop nvtop scrot 
+sudo pacman -S gpick wget xclip slop lxappearance ncmpcpp 
+
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+systemctl enable bluetooth.service
+systemctl start bluetooth.service
+
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
+setxkbmap -layout 'us,ru' -option 'grp:caps_toggle,grp_led: caps'

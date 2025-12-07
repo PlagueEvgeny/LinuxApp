@@ -1,0 +1,151 @@
+#!/usr/bin/env bash
+
+ROFI="rofi -dmenu -i -p"
+SEP=" → "
+
+command -v rofi >/dev/null 2>&1 || exit 1
+command -v pactl >/dev/null 2>&1 || exit 1
+
+#####################
+# ПЕРЕВОД В РУССКИЙ
+#####################
+
+
+pretty_name() {
+    name="$1"
+    desc="$2"
+
+    # HDMI
+    if [[ "$name" == *"HDMI"* ]]; then
+        echo "󰍹 Монитор (HDMI)"
+        return
+    fi
+
+    # Bluetooth
+    if [[ "$name" == *"bluez"* ]]; then
+        echo "󰂯 Bluetooth-наушники"
+        return
+    fi
+
+    # USB
+    if [[ "$name" == *"usb"* || "$desc" == *"USB"* ]]; then
+        echo "󰕓 USB-устройство"
+        return
+    fi
+
+    # Аналог / встроенное
+    if [[ "$name" == *"Speaker"* ]]; then
+        echo "󰓃 Встроенные динамики"
+        return
+    fi
+
+    # Микрофон
+    if [[ "$desc" == *"Microphone"* || "$desc" == *"Микроф"* ]]; then
+        echo "󰍬 Микрофон"
+        return
+    fi
+
+    # fallback
+    echo "$desc"
+}
+
+###################
+# ГЛАВНОЕ МЕНЮ
+###################
+
+MODE=$(printf "󰓃 Вывод (динамики)\n󰍬 Ввод (микрофон)\n󰂯 Bluetooth профиль\n" | $ROFI "Аудио")
+
+###################
+# ВЫВОД ЗВУКА
+###################
+
+if [[ "$MODE" == *"Вывод"* ]]; then
+
+    ITEMS=$(pactl list short sinks | while read -r id name rest; do
+
+        desc=$(pactl list sinks | awk -v n="$name" '
+            $0 ~ "Name: "n {found=1}
+            found && /Description:/ {
+                sub(/Description: /,""); print; exit
+            }')
+
+        PRETTY=$(pretty_name "$name" "$desc")
+
+        printf "%s%s%s\n" "$PRETTY" "$SEP" "$name"
+
+    done)
+
+    CHOICE=$(printf "%s\n" "$ITEMS" | $ROFI "Вывод")
+
+    [ -z "$CHOICE" ] && exit
+
+    TARGET=$(echo "$CHOICE" | awk -F"$SEP" '{print $2}')
+
+    pactl set-default-sink "$TARGET"
+
+    # Перемещение уже запущенных потоков
+    for input in $(pactl list short sink-inputs | awk '{print $1}'); do
+        pactl move-sink-input "$input" "$TARGET"
+    done
+
+    notify-send "Аудио" "Вывод: $(echo $CHOICE | awk -F$SEP '{print $1}')"
+fi
+
+
+###################
+# ВВОД ЗВУКА
+###################
+
+if [[ "$MODE" == *"Ввод"* ]]; then
+
+    ITEMS=$(pactl list short sources | grep -v ".monitor" | while read -r id name rest; do
+
+        desc=$(pactl list sources | awk -v n="$name" '
+            $0 ~ "Name: "n {found=1}
+            found && /Description:/ {
+                sub(/Description: /,""); print; exit
+            }')
+
+        PRETTY=$(pretty_name "$name" "$desc")
+
+        printf "%s%s%s\n" "$PRETTY" "$SEP" "$name"
+
+    done)
+
+    CHOICE=$(printf "%s\n" "$ITEMS" | $ROFI "Микрофон")
+
+    [ -z "$CHOICE" ] && exit
+
+    TARGET=$(echo "$CHOICE" | awk -F"$SEP" '{print $2}')
+
+    pactl set-default-source "$TARGET"
+
+    notify-send "Аудио" "Микрофон: $(echo $CHOICE | awk -F$SEP '{print $1}')"
+fi
+
+
+#########################
+# BLUETOOTH ПРОФИЛИ
+#########################
+
+if [[ "$MODE" == *"Bluetooth"* ]]; then
+
+    BT_CARDS=$(pactl list cards short | grep blue | awk '{print $2}')
+    [ -z "$BT_CARDS" ] && exit
+
+    CARD=$(printf "%s\n" "$BT_CARDS" | $ROFI "Устройство")
+
+    PROFILES=$(pactl list cards | awk -v c="$CARD" '
+        $0 ~ "Name: "c {flag=1}
+        flag && /Profiles:/ {getline; while($0 ~ ":"){print; getline} exit}
+    ' | sed 's/.*: //')
+
+    PROFILE=$(printf "%s\n" "$PROFILES" | $ROFI "Профиль")
+
+    [ -z "$PROFILE" ] && exit
+
+    pactl set-card-profile "$CARD" "$PROFILE"
+
+    notify-send "Bluetooth" "Профиль: $PROFILE"
+fi
+

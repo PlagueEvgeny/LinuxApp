@@ -1,0 +1,64 @@
+#!/bin/sh
+
+pgrep -x sxhkd > /dev/null || sxhkd &
+pgrep -x lxsession > /dev/null || lxsession & 
+
+setxkbmap -layout 'us,ru' -option 'grp:caps_toggle,grp_led: caps'
+
+
+# Multiple monitor support
+sh $HOME/.config/bspwm/dual_monitors.sh
+
+# Window borders (Auto-Generate)
+bspc config focus_follows_pointer true
+bspc config focused_border_color "#7899FA"
+bspc config normal_border_color "#1f222b"
+bspc config border_width 5
+bspc config borderless_monocle true
+
+bspc config active_border_color "#bd93f9"
+bspc config presel_feedback_color "#6272a4"
+
+# fix pointer
+xsetroot -cursor_name left_ptr
+
+# gaps
+bspc config gapless_monocle false
+bspc config window_gap 17
+
+# moving floating windows and resize them with mouse, hold alt key
+bspc config pointer_modifier mod4
+bspc config pointer_action1 move
+bspc config pointer_action2 resize_side
+bspc config pointer_action3 resize_corner
+
+# rules
+bspc rule -a feh state=floating
+
+# start resources
+xrdb merge ~/.Xresources
+
+# Random Wallpaper Script
+sh ~/.config/dotfiles/bin/random_wall.sh
+
+# Run polybar
+sh ~/.config/polybar/launch.sh
+# Run udiskie 
+sh ~/.config/udiskie/launch.sh
+
+# launch notification daemon
+dunst -config ~/.config/dunst/dunstrc &
+
+# launch battery tracker and redshift
+pkill battery-alert; ~/.config/dotfiles/bin/battery-alert &
+pgrep -x redshift > /dev/null || redshift &
+
+# start compositor
+picom --config ~/.config/picom/picom_conf.conf &
+
+# == autostart ==
+pkill flameshot; flameshot &
+
+
+# run cursor tracker
+pkill cursor_tracker ; ~/.config/dotfiles/bin/cursor_tracker.sh

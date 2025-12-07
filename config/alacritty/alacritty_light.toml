@@ -52,19 +52,16 @@ shape = "Underline"
 size = 15.0
 
 [font.bold]
-family = "Hack"
 style = "Bold"
 
 [font.bold_italic]
-family = "Hack"
 style = "Bold Italic"
 
 [font.italic]
-family = "Hack"
 style = "Italic"
 
 [font.normal]
-family = "Hack"
+family = "JetBrainsMono Nerd Font"
 style = "Regular"
 
 [[keyboard.bindings]]
@@ -86,7 +83,7 @@ mods = "Control"
 history = 10000
 multiplier = 3
 
-[shell]
+[terminal.shell]
 program = "/usr/bin/zsh"
 
 [window]
@@ -101,3 +98,5 @@ instance = "Alacritty"
 [window.padding]
 x = 5
 y = 5
+
+[terminal]

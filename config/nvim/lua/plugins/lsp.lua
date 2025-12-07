@@ -1,12 +1,28 @@
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
--- Sntup language servers.
-local lspconfig = require('lspconfig')
-lspconfig.pyright.setup {}
-lspconfig.prismals.setup {}
-lspconfig.cssls.setup {
-    capabilities = capabilities
-}
+
+-- Регистрируем/настраиваем конфиг Pyright
+local function uv_python()
+    local cmd = "uv run python -c 'import sys; print(sys.executable)'"
+    local out = vim.fn.systemlist(cmd)
+    if #out > 0 and vim.fn.filereadable(out[1]) == 1 then
+        return out[1]
+    end
+    -- fallback, если uv не сработал
+    return vim.fn.exepath("python3")
+end
+
+vim.lsp.config("pyright", {
+    settings = {
+        python = {
+            defaultInterpreterPath = uv_python(),
+        },
+    },
+})
+
+vim.lsp.enable("pyright")
+
+
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 vim.keymap.set('n', '<leader>lD', vim.diagnostic.open_float)

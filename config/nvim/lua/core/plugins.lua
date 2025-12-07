@@ -13,22 +13,19 @@ require("lazy").setup({
     {'akinsho/toggleterm.nvim'},
     {
         'nvim-telescope/telescope.nvim',
-        tag = '0.1.1',
         dependencies = {
             'nvim-lua/plenary.nvim'
         }
     },
     {
         "folke/which-key.nvim",
-        branch = "v3"
     },
     {'phaazon/hop.nvim'},
 	{'nvim-treesitter/nvim-treesitter'},
 	{'joshdick/onedark.vim'},
-	{'projekt0n/github-nvim-theme'},
+    { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
     {
         "nvim-neo-tree/neo-tree.nvim",
-        branch = "v2.x",
         dependencies = {
             "nvim-lua/plenary.nvim", "nvim-tree/nvim-web-devicons",
             "MunifTanjim/nui.nvim", "s1n7ax/nvim-window-picker"
